@@ -45,16 +45,19 @@ if __name__ == "__main__":
     # grab all images in 1000px folder
     sourceDir = '../png1000px'
 
+    # get resize dimensions from arg inputs
     size = args.size
+
+    # create correct exports folder if it doesn't exist already
     if not os.path.exists('exports/' + str(size) + 'px'):
         os.makedirs('exports/' + str(size) + 'px')
 
+    # iterate through images and resize them, saving to proper folder
     for file in os.listdir(sourceDir):
         img = Image.open(os.path.join(sourceDir, file))
         resized = generate_square(img, size)
         print('Resizing ' + file)
         resized.save('exports/' + str(size) + 'px/' + file)
 
-        
     print('Images have been successfully resized and saved to /exports folder.')
 
