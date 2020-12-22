@@ -2,7 +2,33 @@
 
 This is an internal Talus repository of country flags. Adapted from Hampus Nilsson's svg-country-flags package: https://github.com/hjnilsson/country-flags.
 
-## Generating square flag images
+## Using the flags
+
+To access the flag images that are hosted by Talus on AWS, use this form of URL:
+`http://talus-flags.s3-website-us-east-1.amazonaws.com/{STYLE}{SIZE}/{ISO}.png`
+TODO: Update this url once it has been HTTPS-ified and prettified
+
+### Options
+
+Available sizes are:
+
+- 32px
+- 64px
+- 100px
+- 300px
+- 1000px
+
+Available styles are flat (normal) or shiny (gives flags a more distinctive border, helpful sometimes in preventing flags blending into the background).
+
+- flat: simply leave `{STYLE}` blank. For example: `http://talus-flags.s3-website-us-east-1.amazonaws.com/64px/us.png`
+- shiny: add `shiny_` prefix for the `{STYLE}` parameter. For example: `http://talus-flags.s3-website-us-east-1.amazonaws.com/shiny_64px/us.png`
+
+### Examples:
+
+- Shiny France (FR) flag at 300px resolution: `http://talus-flags.s3-website-us-east-1.amazonaws.com/shiny_300px/fr.png`
+- Flat Australia (AU) flag at 100px resolution: `http://talus-flags.s3-website-us-east-1.amazonaws.com/100px/au.png`
+
+## Generating flag images
 
 By running `resize.py` from the `scripts` directory, you can generate a set of square image flags at any resolution at or below 1000px. The flags will maintain their aspect ratio, but the images themselves will be square at a consistent size for easier implementation.
 
