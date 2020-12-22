@@ -1,3 +1,5 @@
 scripts/exports
 .DS_Store
 .vscode
+png1000px/shiny/*.png
+png1000px/shiny/shadow/*.png

@@ -14,3 +14,10 @@ _Instructions:_
 - Install Pillow with `python3 -m pip install --upgrade Pillow`
 - Run the script from `scripts` directory: `python resize.py {desired image dimension, in pixels}`. For example: `python resize.py 64` will resize into 64px by 64px squares
 - Generated images can be found in `scripts/exports/{pixels}px`, where `{pixels}` was the number of pixels you used to run the command
+
+_NOTES:_
+
+- To switch between generating shiny and flat flags, change the source image folder in line 46 of `resize.py` to be either `png1000px` (flat) or `shiny1000px` (shiny). Then, change the export folder prefix appropriately in lines 52, 53, and 60 (either add or remove `shiny_` in the folder name).
+- If you receive the "ModuleNotFoundError: No module named 'PIL'" error after installing pillow, you may have multiple python versions competing. Try `python3 resize.py 64` instead.
+- The ImageMagick commands used to create the shiny pngs from the flat pngs can be found in `png1000px` dir. `bevel.sh` bevels the images, and `shiny/shadow.sh` is used to give the beveled images a shadow.
+- If generating new shiny images, it's a good idea to check the `np.png` image for Nepal, since Nepal's flag has a unique shape. Minimal editing may be required to eliminate any artifacts.

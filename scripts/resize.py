@@ -19,7 +19,7 @@ def confirmImgBlowUp():
         print(bColors.RED + 'Invalid input, please try again.' + bColors.CLEAR)
         confirmImgBlowUp()
 
-# RESIZE IMAGE SMALLER AND GENERATE 
+# RESIZE IMAGE SMALLER AND GENERATE SQUARES
 # adapted from https://stackoverflow.com/questions/44231209/resize-rectangular-image-to-square-keeping-ratio-and-fill-background-with-black/44231784
 def generate_square(img, new_size, fill_color=(0, 0, 0, 0)):
     ox, oy = img.size # get dimensions of original image
@@ -54,10 +54,12 @@ if __name__ == "__main__":
 
     # iterate through images and resize them, saving to proper folder
     for file in os.listdir(sourceDir):
-        img = Image.open(os.path.join(sourceDir, file))
-        resized = generate_square(img, size)
-        print('Resizing ' + file)
-        resized.save('exports/' + str(size) + 'px/' + file)
+        # ignore files that aren't png images
+        if 'png' in file:
+            img = Image.open(os.path.join(sourceDir, file))
+            resized = generate_square(img, size)
+            print('Resizing ' + file)
+            resized.save('exports/' + str(size) + 'px/' + file)
 
     print('Images have been successfully resized and saved to /exports folder.')
 
