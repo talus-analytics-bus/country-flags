@@ -1,10 +1,11 @@
-# country-flags
+# country-flags 🇩🇪
 
 This is an internal Talus repository of country flags. Adapted from Hampus Nilsson's svg-country-flags package: https://github.com/hjnilsson/country-flags.
 
 ## Using the flags
 
 To access the flag images that are hosted by Talus on AWS, use this form of URL:
+
 `https://flags.talusanalytics.com/{STYLE}{SIZE}/{ISO}.png`
 
 ### Options
