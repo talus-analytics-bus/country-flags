@@ -5,8 +5,7 @@ This is an internal Talus repository of country flags. Adapted from Hampus Nilss
 ## Using the flags
 
 To access the flag images that are hosted by Talus on AWS, use this form of URL:
-`http://talus-flags.s3-website-us-east-1.amazonaws.com/{STYLE}{SIZE}/{ISO}.png`
-TODO: Update this url once it has been HTTPS-ified and prettified
+`https://flags.talusanalytics.com/{STYLE}{SIZE}/{ISO}.png`
 
 ### Options
 
@@ -20,13 +19,13 @@ Available sizes are:
 
 Available styles are flat (normal) or shiny (gives flags a more distinctive border, helpful sometimes in preventing flags blending into the background).
 
-- flat: simply leave `{STYLE}` blank. For example: `http://talus-flags.s3-website-us-east-1.amazonaws.com/64px/us.png`
-- shiny: add `shiny_` prefix for the `{STYLE}` parameter. For example: `http://talus-flags.s3-website-us-east-1.amazonaws.com/shiny_64px/us.png`
+- flat: simply ignore `{STYLE}` paramter — flat is default. For example: `https://flags.talusanalytics.com/64px/us.png`
+- shiny: add `shiny_` prefix for the `{STYLE}` parameter. For example: `https://flags.talusanalytics.com/shiny_64px/us.png`
 
 ### Examples:
 
-- Shiny France (FR) flag at 300px resolution: `http://talus-flags.s3-website-us-east-1.amazonaws.com/shiny_300px/fr.png`
-- Flat Australia (AU) flag at 100px resolution: `http://talus-flags.s3-website-us-east-1.amazonaws.com/100px/au.png`
+- Shiny France (FR) flag at 300px resolution: `https://flags.talusanalytics.com/shiny_300px/fr.png`
+- Flat Australia (AU) flag at 100px resolution: `https://flags.talusanalytics.com/100px/au.png`
 
 ## Advanced: Generating flag images
 
